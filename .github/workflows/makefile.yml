@@ -18,6 +18,3 @@ jobs:
       run: |
         make setup
         make
-      
-    - name: Test The Game
-      run: ./bin/game
