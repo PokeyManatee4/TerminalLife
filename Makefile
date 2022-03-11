@@ -3,8 +3,8 @@ OUTDIR = bin
 CODEDIR = src
 
 all:
-	gcc -c $(CODEDIR)/main.cpp -o $(OUTDIR)/game
-	chmod 755 ./bin/game
+	gcc -c $(CODEDIR)/main.c -o $(OUTDIR)/game
+	chmod a+x ./bin/game
 
 setup:
 	@mkdir $(OBJDIR)
