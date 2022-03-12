@@ -3,7 +3,7 @@ OUTDIR = bin
 CODEDIR = src
 
 all:
-	g++ -c $(CODEDIR)/main.cpp -o $(OUTDIR)/game
+	g++ $(CODEDIR)/main.cpp -o $(OUTDIR)/game
 	chmod a+x ./bin/game
 
 setup:
