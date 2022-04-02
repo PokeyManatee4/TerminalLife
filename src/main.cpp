@@ -1,11 +1,57 @@
+#include <iostream>
+#include <fstream>
+#include <string>
 #include <stdio.h>
 #include <stdlib.h>
-#define Success 01
-void gameloop() {
-    system("clear");
-    printf("Coming Soon To Your Terminal");
+using namespace std;
+
+void startupterminaltext()
+{
+   fstream newfile;
+   newfile.open("dailyterminallifestartuptext.txt",ios::in);
+   if (newfile.is_open()){
+      string startuptext;
+      while(getline(newfile, startuptext)){
+          system("clear");
+          cout << startuptext << "\n";
 }
-int main(){
+      newfile.close();
+   }
+else {
+    system("wget https://github.com/PokeyManatee4/TerminalLife/releases/download/0.1/dailyterminallifestartuptext.txt -q");
+    startupterminaltext();
+    }
+}
+
+void terminallifeosbuild(int version1, int version2)
+{
+     #ifdef _WIN32
+        printf("TerminalLife Windows OS Version %d.%d, ", version1, version2);
+    #else
+        printf("TerminalLife Linux OS Version %d.%d, ", version1, version2);
+    #endif
+}
+
+void gameloop() {
+    int age;
+    system("clear");
+    printf("Enter Your Age:");
+    scanf("%d", &age);
+    if (age > 12) {
+    printf("Coming Soon To Your Terminal, ");
+ }
+    
+else{
+    printf("You Cant Play You Must Be 13 Years Old You Are %d", age);
+    exit(01);
+}
+    system("clear");
+    startupterminaltext();
+}
+
+int main() {
+    terminallifeosbuild(0, 1);
     gameloop();
-    return Success;
+    system ("rm -r dailyterminallifestartuptext.txt");
+    return 01;
 }
