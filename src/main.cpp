@@ -5,7 +5,7 @@
 #include <stdlib.h>
 using namespace std;
 
-void startupterminaltext()
+void startupterminaltext(const char *url)
 {
    fstream newfile;
    newfile.open("dailyterminallifestartuptext.txt",ios::in);
@@ -18,7 +18,7 @@ void startupterminaltext()
       newfile.close();
    }
 else {
-    system("wget https://github.com/PokeyManatee4/TerminalLife/releases/download/0.1/dailyterminallifestartuptext.txt -q");
+    system("wget %s -q", url);
     startupterminaltext();
     }
 }
@@ -51,7 +51,7 @@ else{
 
 int main() {
     terminallifeosbuild(0, 1);
-    gameloop();
+    gameloop("https://github.com/PokeyManatee4/TerminalLife/releases/download/0.1/dailyterminallifestartuptext.txt");
     system ("rm -r dailyterminallifestartuptext.txt");
     return 01;
 }
