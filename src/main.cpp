@@ -46,12 +46,12 @@ else{
     exit(01);
 }
     system("clear");
-    startupterminaltext();
+    startupterminaltext("https://github.com/PokeyManatee4/TerminalLife/releases/download/0.1/dailyterminallifestartuptext.txt");
 }
 
 int main() {
     terminallifeosbuild(0, 1);
-    gameloop("https://github.com/PokeyManatee4/TerminalLife/releases/download/0.1/dailyterminallifestartuptext.txt");
+    gameloop();
     system ("rm -r dailyterminallifestartuptext.txt");
     return 01;
 }
