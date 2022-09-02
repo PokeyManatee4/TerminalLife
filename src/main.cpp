@@ -1,8 +1,8 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <stdio.h>
-#include <stdlib.h>
+#include <cstdio>
+#include <cstdlib>
 using namespace std;
 
 void startupterminaltext(char url)
@@ -18,7 +18,7 @@ void startupterminaltext(char url)
       newfile.close();
    }
 else {
-    system("wget %s -q", url);
+    system("wget %d -q", url);
     startupterminaltext();
     }
 }
