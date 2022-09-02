@@ -5,7 +5,7 @@
 #include <stdlib.h>
 using namespace std;
 
-void startupterminaltext(const char *url)
+void startupterminaltext(char url)
 {
    fstream newfile;
    newfile.open("dailyterminallifestartuptext.txt",ios::in);
